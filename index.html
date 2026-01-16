@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Hub Patrick Billy</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Style -->
+  <?!= include("style"); ?>
+</head>
+
+<body>
+
+<header class="mobile-header">
+  <h1>👋 Patrick</h1>
+  <p id="date"></p>
+  <p class="signature">Assistant personnel — Patrick Billy</p>
+
+  <button
+    class="btn-night"
+    id="toggleNightBtn"
+    onclick="toggleNightMode()"
+    aria-pressed="false">
+    🌙 Mode nuit
+  </button>
+</header>
+
+<main class="mobile">
+
+  <!-- THÈME DE LA SEMAINE -->
+  <section class="card theme-card" aria-labelledby="theme-title">
+    <h2 id="theme-title">🌍 Thème de la semaine</h2>
+
+    <figure class="theme-figure">
+      <img
+        id="themeImage"
+        src=""
+        alt="Thème de la semaine"
+        loading="lazy"
+        referrerpolicy="no-referrer"
+      />
+      <figcaption id="themeCaption"></figcaption>
+    </figure>
+  </section>
+
+  <!-- AMBIANCE MUSICALE -->
+  <section class="card music-card" aria-labelledby="music-title">
+    <h2 id="music-title">🎧 Ambiance de la semaine</h2>
+
+    <button
+      class="btn-music"
+      id="toggleMusicBtn"
+      onclick="toggleMusic()"
+      aria-pressed="false">
+      🎧 Activer la musique
+    </button>
+
+    <iframe
+      id="spotifyPlayer"
+      title="Lecteur Spotify – ambiance de la semaine"
+      src=""
+      width="100%"
+      height="152"
+      frameborder="0"
+      allow="encrypted-media"
+      loading="lazy">
+    </iframe>
+
+    <p id="musicCaption" class="music-caption"></p>
+  </section>
+
+  <!-- ACTIONS IA -->
+  <section class="card">
+    <button class="btn-main" onclick="lancerAnalyse()">🧠 Anticiper ma journée</button>
+    <button class="btn-alert" onclick="lancerAlertes()">🚨 Voir les alertes</button>
+    <pre id="ia">Clique pour lancer l’analyse.</pre>
+  </section>
+
+  <!-- DONNÉES AVANT IA -->
+  <section class="card">
+    <h2>🔐 Données avant analyse IA</h2>
+    <pre id="preview">Chargement…</pre>
+    <button class="btn-validate" onclick="validerEnvoiIA()">✅ Valider l’analyse IA</button>
+  </section>
+
+  <!-- AGENDA -->
+  <section class="card">
+    <h2>📅 Aujourd’hui</h2>
+    <ul id="agenda"></ul>
+  </section>
+
+  <!-- MAILS -->
+  <section class="card">
+    <h2>📩 Mails prioritaires</h2>
+    <ul id="mails"></ul>
+  </section>
+
+</main>
+
+<!-- Script -->
+<?!= include("script"); ?>
+
+</body>
+</html>

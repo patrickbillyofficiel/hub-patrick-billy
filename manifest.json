@@ -1,18 +1,19 @@
 {
   "name": "Hub Patrick Billy",
   "short_name": "Hub Patrick",
-  "start_url": ".",
+  "description": "Assistant personnel — Patrick Billy",
+  "start_url": "/hub-patrick-billy/",
   "display": "standalone",
   "background_color": "#f1f5f9",
   "theme_color": "#0f766e",
   "icons": [
     {
-      "src": "icon-192.png",
+      "src": "assets/icons/icon-192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "icon-512.png",
+      "src": "assets/icons/icon-512.png",
       "sizes": "512x512",
       "type": "image/png"
     }

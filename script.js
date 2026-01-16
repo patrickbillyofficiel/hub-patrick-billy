@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     chargerThemeSemaine();
     appliquerEtatMusique();
     appliquerNightMode();
-    chargerDashboard(); // optionnel selon environnement
+    chargerDashboard(); // désactivé automatiquement sur GitHub
   } catch (e) {
     console.warn("Erreur initialisation :", e);
   }
@@ -89,7 +89,8 @@ function chargerThemeSemaine() {
     }
   ];
 
-  const index = Math.floor(Date.now() / (1000 * 60 * 60 * 24 * 7)) % themes.length;
+  const index =
+    Math.floor(Date.now() / (1000 * 60 * 60 * 24 * 7)) % themes.length;
   const t = themes[index];
 
   const img = document.getElementById("themeImage");
@@ -99,8 +100,22 @@ function chargerThemeSemaine() {
 
   if (!img || !caption) return;
 
+  // Reset propre
+  img.classList.remove("loaded");
+  img.src = "";
   img.alt = "Ambiance " + t.pays;
-  img.src = t.image + "?v=" + Date.now(); // anti-cache
+
+  // Forcer rechargement image
+  const src = t.image + "&v=" + Date.now();
+  img.src = src;
+
+  img.onload = () => {
+    img.classList.add("loaded");
+  };
+
+  img.onerror = () => {
+    console.warn("Image non chargée :", src);
+  };
 
   caption.textContent = t.texte;
 

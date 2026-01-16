@@ -198,6 +198,25 @@ body.night .btn-night {
   color: #e5e7eb;
 }
 
+.theme-figure {
+  width: 100%;
+  margin: 0;
+}
+
+.theme-figure img {
+  display: block;
+  width: 100%;
+  min-height: 180px;
+  max-height: 260px;
+  object-fit: cover;
+  border-radius: 12px;
+  background: #f0f0f0;
+}
+
+.theme-card {
+  overflow: visible;
+}
+
 </style>
 
 

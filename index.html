@@ -6,8 +6,8 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Style -->
-  <?!= include("style"); ?>
+  <!-- Style GitHub -->
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -38,7 +38,6 @@
         src=""
         alt="Thème de la semaine"
         loading="lazy"
-        referrerpolicy="no-referrer"
       />
       <figcaption id="themeCaption"></figcaption>
     </figure>
@@ -70,36 +69,33 @@
     <p id="musicCaption" class="music-caption"></p>
   </section>
 
-  <!-- ACTIONS IA -->
+  <!-- ACTIONS -->
   <section class="card">
-    <button class="btn-main" onclick="lancerAnalyse()">🧠 Anticiper ma journée</button>
-    <button class="btn-alert" onclick="lancerAlertes()">🚨 Voir les alertes</button>
+    <button class="btn-main">🧠 Anticiper ma journée</button>
+    <button class="btn-alert">🚨 Voir les alertes</button>
     <pre id="ia">Clique pour lancer l’analyse.</pre>
-  </section>
-
-  <!-- DONNÉES AVANT IA -->
-  <section class="card">
-    <h2>🔐 Données avant analyse IA</h2>
-    <pre id="preview">Chargement…</pre>
-    <button class="btn-validate" onclick="validerEnvoiIA()">✅ Valider l’analyse IA</button>
   </section>
 
   <!-- AGENDA -->
   <section class="card">
     <h2>📅 Aujourd’hui</h2>
-    <ul id="agenda"></ul>
+    <ul id="agenda">
+      <li>Version GitHub — agenda non connecté</li>
+    </ul>
   </section>
 
   <!-- MAILS -->
   <section class="card">
     <h2>📩 Mails prioritaires</h2>
-    <ul id="mails"></ul>
+    <ul id="mails">
+      <li>Version GitHub — mails non connectés</li>
+    </ul>
   </section>
 
 </main>
 
-<!-- Script -->
-<?!= include("script"); ?>
+<!-- Script GitHub -->
+<script src="script.js"></script>
 
 </body>
 </html>
